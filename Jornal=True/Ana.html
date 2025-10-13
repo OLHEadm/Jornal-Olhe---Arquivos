@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jornal 🧿LHE</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  font-family: 'Bebas Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+  text-align: center;
+}
+
+header, footer {
+  text-align: center;
+}
+
+.noticia-container {
+  display: flex;
+  justify-content: center;
+}
+
+.noticia-conteudo {
+  max-width: 800px;
+  width: 100%;
+}
+
+.noticia-texto {
+  text-align: center;
+}
+
+main {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+main > p {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.arte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.arte img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #1b5e20;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.arte img:hover {
+  transform: scale(1.05);
+}
+
+.arte p {
+  margin-top: 10px;
+  font-size: 2em;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #1b5e20;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .arte { width: 45%; }
+  .arte img { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.8em; }
+  .menu-toggle { font-size: 2.5em; }
+  .arte { width: 100%; }
+  .arte img { width: 100%; }
+}
+</style>
+</head>
+<body>
+<header>
+  <button class="menu-toggle">☰</button>
+  <h1>Bem-vindo ao jornal 🧿LHE!</h1>
+</header>
+  <nav class="menu oculto" id="menu">
+    <button class="close-button">✖</button>
+    <ul>
+      <ul>
+      <li><a href="Jornal.html" class="destaque">Destaque</a></li>
+    </ul>
+
+      <li>
+        <a href="#" class="submenu-toggle">Entrevistas ▾</a>
+        <ul class="submenu">
+          <li><a href="Rildo.html">Professor Rildo</a></li>
+          <li><a href="Esportes.html">Cauê Hirai</a></li>
+        </ul>
+      </li>
+      
+            <li>
+        <a href="#" class="submenu-toggle">Arte ▾</a>
+        <ul class="submenu">
+          <li><a href="charge.html">Charge</a></li>
+          <li><a href="Ana.html">Ana Caroline</a></li>
+        </ul>
+      </li>
+
+      <li><a href="educacao.html">Educação</a></li>
+
+      <li><a href="dicas.html">Dicas da Semana</a></li>
+
+  </nav>
+
+
+                                <!--Entrevista com a artistas Ana Caroline-->
+
+
+<main>
+  <div class="container-central">
+    <section class="noticia">
+      <div class="noticia-container">
+        <div class="noticia-conteudo">
+          <div class="noticia-texto">
+            <h2>🎨 Ana Caroline: A Arte como Expressão e Inspiração</h2>
+            <p><strong>• Como e quando você começou a fazer arte?</strong></p>
+            <p>Eu comecei a desenhar quando tinha 5 anos, mas realmente me empenhei no desenvolvimento do traço com 12 anos. Logo, me apaixonei pela arte e pelas suas várias formas de expressão.</p>
+            <p><strong>• Tem algum artista que você se inspirou?</strong></p>
+            <p>Sempre me inspirei em desenhos surrealistas, chamativos, mas fui moldando meu estilo para caber em diferentes tipos de desenhos, como realistas, o próprio “2D” entre outros. Mas os artistas que mais me apaixonei durante minha trajetória foram Salvador Dali, Louis Wain e Van Gogh.</p>
+            <p><strong>• Quais técnicas você utiliza na pintura?</strong></p>
+            <p>Eu uso uma variação de lápis, tintas acrílicas, aquarela, tinta a óleo, canetinhas, canetas esferográficas e carvão.</p>
+            <p><strong>• Como você se sente quando pinta?</strong></p>
+            <p>Eu me sinto livre de tudo aquilo que me prende na “carne”, algo mais expressivo, uma forma de deixar o que se sente, uma parte de você, o que se quer falar ou até mesmo uma história. É sobre muito mais aquilo que te faz sentir, não pensar no próximo passo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+    <hr>
+
+  <p>Confira abaixo as pinturas selecionadas pela Ana Caroline:</p>
+    <main>
+  <div class="artes">
+    <div class="arte"><img src="1.jpg" alt="Arte 1"><p>Arte 1</p></div>
+    <div class="arte"><img src="2.jpg" alt="Arte 2"><p>Arte 2</p></div>
+    <div class="arte"><img src="3.jpg" alt="Arte 3"><p>Arte 3</p></div>
+    <div class="arte"><img src="4.jpg" alt="Arte 4"><p>Arte 4</p></div>
+    <div class="arte"><img src="5.jpg" alt="Arte 5"><p>Arte 5</p></div>
+    <div class="arte"><img src="6.jpg" alt="Arte 6"><p>Arte 6</p></div>
+    <div class="arte"><img src="7.jpg" alt="Arte 7"><p>Arte 7</p></div>
+    <div class="arte"><img src="8.jpg" alt="Arte 8"><p>Arte 8</p></div>
+    <div class="arte"><img src="9.jpg" alt="Arte 9"><p>Arte 9</p></div>
+    <div class="arte"><img src="10.jpg" alt="Arte 10"><p>Arte 10</p></div>
+    <div class="arte"><img src="11.jpg" alt="Arte 11"><p>Arte 11</p></div>
+    <div class="arte"><img src="12.jpg" alt="Arte 12"><p>Arte 12</p></div>
+    <div class="arte"><img src="13.jpg" alt="Arte 13"><p>Arte 13</p></div>
+    <div class="arte"><img src="14.jpg" alt="Arte 14"><p>Arte 14</p></div>
+    <div class="arte"><img src="15.jpg" alt="Arte 15"><p>Arte 15</p></div>
+    <div class="arte"><img src="16.jpg" alt="Arte 16"><p>Arte 16</p></div>
+  </div>
+    </main>
+<footer>
+  <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Alunos do IF.</p>
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "hidden";
+  submenu.style.transition = "max-height 0.3s ease";
+
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if(submenu.style.maxHeight === "0px") {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    } else {
+      submenu.style.maxHeight = "0px";
+    }
+  });
+});
+</script>
+</body>
+</html>

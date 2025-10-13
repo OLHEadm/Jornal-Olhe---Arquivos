@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jornal 🧿LHE — Charge</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.imagem-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-container img {
+  width: 50%;
+  height: auto;
+  transform: rotate(90deg);
+  object-fit: contain;
+}
+
+.titulo-arte {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<header>
+  <button class="menu-toggle">☰</button>
+  <h1>Bem-vindo ao jornal 🧿LHE!</h1>
+</header>
+
+  <nav class="menu oculto" id="menu">
+    <button class="close-button">✖</button>
+    <ul>
+      <ul>
+      <li><a href="Jornal.html" class="destaque">Destaque</a></li>
+    </ul>
+
+      <li>
+        <a href="#" class="submenu-toggle">Entrevistas ▾</a>
+        <ul class="submenu">
+          <li><a href="Rildo.html">Professor Rildo</a></li>
+          <li><a href="Esportes.html">Cauê Hirai</a></li>
+        </ul>
+      </li>
+      
+            <li>
+        <a href="#" class="submenu-toggle">Arte ▾</a>
+        <ul class="submenu">
+          <li><a href="charge.html">Charge</a></li>
+          <li><a href="Ana.html">Ana Caroline</a></li>
+        </ul>
+      </li>
+
+      <li><a href="educacao.html">Educação</a></li>
+
+      <li><a href="dicas.html">Dicas da Semana</a></li>
+
+  </nav>
+
+
+                                <!--Charge-->
+  
+<main>
+  <div class="imagem-container">
+    <h2 class="titulo-arte" style="color: black;">"Mulheres na Ciência"</h2>
+    <img src="charge.jpg" alt="Charge">
+  </div>
+</main>
+
+
+
+
+
+<footer>
+  <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Sautoriais.</p>
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "hidden";
+  submenu.style.transition = "max-height 0.3s ease";
+
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if(submenu.style.maxHeight === "0px") {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    } else {
+      submenu.style.maxHeight = "0px";
+    }
+  });
+});
+</script>
+</body>
+</html>

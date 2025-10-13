@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal 🧿LHE - Dicas da Semana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    header, footer {
+      text-align: center;
+    }
+
+    .noticia-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .noticia-conteudo {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .noticia-texto {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <button class="menu-toggle">☰</button>
+  <h1>Bem-vindo ao jornal 🧿LHE!</h1>
+</header>
+
+  <nav class="menu oculto" id="menu">
+    <button class="close-button">✖</button>
+    <ul>
+      <ul>
+      <li><a href="Jornal.html" class="destaque">Destaque</a></li>
+    </ul>
+
+      <li>
+        <a href="#" class="submenu-toggle">Entrevistas ▾</a>
+        <ul class="submenu">
+          <li><a href="Rildo.html">Professor Rildo</a></li>
+          <li><a href="Esportes.html">Cauê Hirai</a></li>
+        </ul>
+      </li>
+      
+            <li>
+        <a href="#" class="submenu-toggle">Arte ▾</a>
+        <ul class="submenu">
+          <li><a href="charge.html">Charge</a></li>
+          <li><a href="Ana.html">Ana Caroline</a></li>
+        </ul>
+      </li>
+
+      <li><a href="educacao.html">Educação</a></li>
+
+      <li><a href="dicas.html">Dicas da Semana</a></li>
+
+  </nav>
+
+<main>
+  <div class="container-central">
+    <section class="noticia">
+      <div class="noticia-container">
+        <div class="noticia-conteudo">
+          <div class="noticia-texto">
+            <h2>🏐 Dica da Semana: saque certo, jogo leve</h2>
+            <p>Se tem um esporte que ensina sobre trabalho em equipe e respeito, esse esporte é o vôlei. E se você está começando ou quer melhorar suas habilidades de salsicha, aqui vão 5 dicas para isso:</p>
+            
+            <p><strong>1. Aprenda a base:</strong> Muita gente quer já sair dando cortada, mas o fundamento mais importante do vôlei é o passe, saber recepcionar bem a bola é o que dá início a qualquer rally decente.</p>
+            
+            <p><strong>2. Mantenha os joelhos sempre semi-flexionados:</strong> Isso dá equilíbrio e agilidade pra reagir rápido, seja pra receber um saque ou correr pra salvar uma bola difícil.</p>
+            
+            <p><strong>3. Comunique-se:</strong> O vôlei é um esporte silencioso só pra quem assiste. Dentro de quadra gritar “minha!”, "sua!" ou "vem" é essencial. O silêncio pode causar confusão, colisão na equipe e até a perda de um jogo.</p>
+            
+            <p><strong>4. Saque com calma:</strong> Não adianta querer um saque cheio força mas sem controle. Comece com o saque por baixo, depois vá evoluindo pro saque por cima e, com o tempo, o sonhado viagem. Cada saque tem seu momento e muitas vezes mais vale um saque pingado em um ponto estratégico do que um saque forte na mão do adversário.</p>
+            
+            <p><strong>5. Não desanime com os erros:</strong> Vôlei é um jogo de repetição. Quanto mais você pratica, mais natural vai parecer. Os melhores também erram (e muito). O importante é se divertir e aproveitar cada segundo!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Alunos do IF.</p>
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "hidden";
+  submenu.style.transition = "max-height 0.3s ease";
+
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if(submenu.style.maxHeight === "0px") {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    } else {
+      submenu.style.maxHeight = "0px";
+    }
+  });
+});
+</script>
+</body>
+</html>

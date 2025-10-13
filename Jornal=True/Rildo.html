@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal 🧿LHE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+    }
+
+    header, footer {
+      text-align: center;
+    }
+
+    .noticia-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .noticia-conteudo {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .noticia-texto {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <button class="menu-toggle">☰</button>
+  <h1>Bem-vindo ao jornal 🧿LHE!</h1>
+</header>
+
+  <nav class="menu oculto" id="menu">
+    <button class="close-button">✖</button>
+    <ul>
+      <ul>
+      <li><a href="Jornal.html" class="destaque">Destaque</a></li>
+    </ul>
+
+      <li>
+        <a href="#" class="submenu-toggle">Entrevistas ▾</a>
+        <ul class="submenu">
+          <li><a href="Rildo.html">Professor Rildo</a></li>
+          <li><a href="Esportes.html">Cauê Hirai</a></li>
+        </ul>
+      </li>
+      
+            <li>
+        <a href="#" class="submenu-toggle">Arte ▾</a>
+        <ul class="submenu">
+          <li><a href="charge.html">Charge</a></li>
+          <li><a href="Ana.html">Ana Caroline</a></li>
+        </ul>
+      </li>
+
+      <li><a href="educacao.html">Educação</a></li>
+
+      <li><a href="dicas.html">Dicas da Semana</a></li>
+
+  </nav>
+
+                                <!--Entrevista com o professor Rildo-->
+
+<main>
+  <div class="container-central">
+    <section class="noticia">
+      <div class="noticia-container">
+        <div class="noticia-conteudo">
+          <div class="noticia-texto">
+            <h2>🎓 Entrevista com professor Rildo</h2>
+
+            <p>Nós, alunos do primeiro ano do Ensino Médio, fizemos uma entrevista com o professor Rildo, que compartilhou conosco um pouco de sua história, desde a infância até os desafios da vida profissional e sua vinda para o campus Salto do IFSP.</p>
+
+            <p>Logo no início, perguntamos por que ele escolheu dar aula em nosso campus. Ele explicou que a decisão foi motivada por seus estudos:</p>
+            <p>“Inicialmente o que me motivou vir pra região Sudeste foi meu doutorado. Minha área é engenharia elétrica com ênfase em sustentabilidade. Aonde eu trabalhava antes, no Instituto Federal de Mato Grosso, não tinha doutorado nessa área. Então, quando surgiu a vaga pra cá, eu mudei pra cá.”</p>
+
+            <p>Quando perguntamos o que o levou a escolher sua profissão, ele nos contou uma história curiosa de sua infância:</p>
+            <p>“Essa é uma história muito engraçada. Eu viajava de Campo Grande para Dourados e no caminho eu passava por torres que tinham várias antenas. Eu nunca entendia. Foi aquela curiosidade de entender como aquilo funcionava.”</p>
+
+            <p>Essa curiosidade o levou a cursar Engenharia Elétrica, mas o início na carreira de professor não foi planejado. Ele começou dando aulas de informática para a terceira idade.</p>
+
+            <p>O professor também compartilhou algumas barreiras que enfrentou. Na faculdade de engenharia, ser um homem gay foi um desafio inicial. Mais tarde, em Mato Grosso, suas aulas sobre sustentabilidade geraram conflitos com a cultura local:</p>
+            <p>“Eu estava num lugar onde, ideologicamente, eles pensam exatamente o oposto. Que aquecimento global não existe... Fui até ameaçado de morte algumas vezes.”</p>
+
+            <p>Sobre a melhor experiência no IF, ele disse que são os momentos que vão além da matéria:</p>
+            <p>“É quando algum aluno lá na frente vem me agradecer por alguma conversa que a gente teve, que às vezes não é no âmbito do ensino, é uma questão pessoal. Isso é bem legal.”</p>
+
+            <p>Por fim, pedimos um conselho para os alunos, e ele destacou a importância de saber conviver:</p>
+            <p>“Aprenda a conviver com pessoas diferentes. A diferença, ela soma. A oportunidade que você tem de conviver com uma pessoa diferente é agora... O IF proporciona isso.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Alunos do IF.</p>
+</footer>
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "hidden";
+  submenu.style.transition = "max-height 0.3s ease";
+
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if(submenu.style.maxHeight === "0px") {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    } else {
+      submenu.style.maxHeight = "0px";
+    }
+  });
+});
+</script>
+</body>
+</html>
+
