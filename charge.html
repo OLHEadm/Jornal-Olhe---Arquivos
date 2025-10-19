@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornal 🧿LHE — Charge</title>
+  <title>Jornal 🧿LHE</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -38,8 +38,17 @@
     .imagem-container img {
       width: 50%;
       height: auto;
-      transform: rotate(90deg);
       object-fit: contain;
+    }
+
+    /* primeira imagem continua girada */
+    .imagem-container img:first-of-type {
+      transform: rotate(90deg);
+    }
+
+    /* segunda imagem fica na horizontal */
+    .imagem-container img.extra-img {
+      transform: none;
     }
 
     .titulo-arte {
@@ -88,12 +97,12 @@
     <div class="imagem-container">
       <h2 class="titulo-arte">"Mulheres na Ciência"</h2>
       <img src="charge.jpg" alt="Charge 1">
-      <img src="charge2.jpg" alt="Charge 2">
+      <img src="charge2.jpg" alt="Charge 2" class="extra-img">
     </div>
   </main>
 
   <footer>
-    <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Sautoriais.</p>
+    <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por alunos do IF.</p>
   </footer>
 
   <script>
