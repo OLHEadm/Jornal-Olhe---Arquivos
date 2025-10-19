@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornal 🧿LHE</title>
+  <title>Jornal 🧿LHE — Charge</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -41,14 +41,9 @@
       object-fit: contain;
     }
 
-    /* primeira imagem continua girada */
-    .imagem-container img:first-of-type {
-      transform: rotate(90deg);
-    }
-
-    /* segunda imagem fica na horizontal */
+    /* só a segunda imagem recebe a correção */
     .imagem-container img.extra-img {
-      transform: none;
+      transform: none; /* garante que fique na horizontal */
     }
 
     .titulo-arte {
@@ -102,7 +97,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por alunos do IF.</p>
+    <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Sautoriais.</p>
   </footer>
 
   <script>
