@@ -5,10 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jornal 🧿LHE</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
-    body, main, .noticia-texto, header, footer {
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(228, 228, 228);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #1b5e20;
+      color: white;
+      padding: 60px 20px;
       text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 3em;
+      cursor: pointer;
+    }
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 270px;
+      height: 100%;
+      background-color: #2e7d32;
+      padding: 100px 20px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    .menu:not(.oculto) {
+      transform: translateX(0);
+    }
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .menu ul {
+      list-style: none;
+      padding: 0;
+    }
+    .menu ul li {
+      margin-bottom: 20px;
+    }
+    .menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.6em;
+      display: block;
+    }
+    .submenu {
+      margin-top: 10px;
+      padding-left: 20px;
+      background: #388e3c;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .submenu li {
+      margin: 10px 0;
+    }
+    .submenu li a {
+      color: #fff;
+      font-size: 1.4em;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 50px 20px;
+    }
+    .container-central {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .noticia-texto {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #1b5e20;
+      color: white;
+      font-size: 1.2em;
     }
   </style>
 </head>
@@ -93,15 +202,4 @@
       submenu.style.transition = "max-height 0.3s ease";
 
       toggle.addEventListener('click', e => {
-        e.preventDefault();
-        if(submenu.style.maxHeight === "0px") {
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-        } else {
-          submenu.style.maxHeight = "0px";
-        }
-      });
-    });
-  </script>
-</body>
-</html>
-
+        e.preventDefault
