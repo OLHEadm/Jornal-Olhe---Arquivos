@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornal 🧿LHE — Charge</title>
+  <title>Jornal 🧿LHE</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -42,7 +42,12 @@
       object-fit: contain;
     }
 
-    /* só a segunda imagem recebe a correção */
+    /* Corrige apenas a primeira imagem (charge.jpg) */
+    .imagem-container img.corrigir-orientacao {
+      transform: rotate(90deg);
+    }
+
+    /* A segunda imagem continua normal */
     .imagem-container img.extra-img {
       transform: rotate(0deg);
     }
@@ -92,7 +97,9 @@
   <main>
     <div class="imagem-container">
       <h2 class="titulo-arte">"Mulheres na Ciência"</h2>
-      <img src="charge.jpg" alt="Charge 1">
+      <!-- Primeira imagem com correção -->
+      <img src="charge.jpg" alt="Charge 1" class="corrigir-orientacao">
+      <!-- Segunda imagem permanece normal -->
       <img src="charge2.jpg" alt="Charge 2" class="extra-img">
     </div>
   </main>
@@ -129,5 +136,3 @@
   </script>
 </body>
 </html>
-
-
