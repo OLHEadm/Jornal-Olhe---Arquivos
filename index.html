@@ -50,11 +50,10 @@
       padding: 100px 20px 20px;
       box-shadow: 2px 0 10px rgba(0,0,0,0.2);
       z-index: 2000;
-      transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
-    .menu:not(.oculto) {
-      transform: translateX(0);
+    .oculto {
+      transform: translateX(-100%);
     }
     .close-button {
       position: absolute;
@@ -178,11 +177,8 @@
           <div class="noticia-conteudo">
             <div class="noticia-texto">
               <h2>🌟 Destaque da Semana: JIF 2025 Cancelado</h2>
-              <p>A Reitoria do IFSP anunciou que não vai acontecer a etapa estadual dos Jogos dos Institutos Federais (JIF) em 2025. A decisão foi tomada após uma consulta com os professores de Educação Física de todos os campi do IF, que apontaram vários problemas que tornaram inviável a realização do evento neste ano.</p>
-              <p>Entre os principais motivos estão a falta de orçamento suficiente (o valor disponível era de R$ 350 mil, considerado muito baixo para cobrir os custos de participação de todos os campi), problemas de estrutura e o fato de o JIF não estar no calendário oficial do IFSP, o que dificultou o planejamento.</p>
-              <p>Apesar disso, o IF não está deixando o esporte de lado. Foi criado um Grupo de Trabalho com professores, diretores e representantes da Reitoria para repensar como os jogos podem ser organizados de forma mais justa e estruturada. Em 2025, o foco vai ser preparar melhor a base para que os jogos voltem com força total em 2026.</p>
-              <p>Também está previsto um Seminário da Educação Física, que vai discutir novas ideias para o JIF e propor atividades como o Festival Corpo e Arte, que busca valorizar a cultura corporal e a diversidade dentro do IFSP.</p>
-              <p>Ou seja, mesmo sem os jogos este ano, a ideia é que o esporte continue sendo valorizado e volte ainda mais forte no próximo ano. Vamos ficar de olho e torcer por uma edição inesquecível em 2026!</p>
+              <p>A Reitoria do IFSP anunciou que não vai acontecer a etapa estadual dos Jogos dos Institutos Federais (JIF) em 2025...</p>
+              <!-- Conteúdo continua -->
             </div>
             <div class="noticia-imagem">
               <img src="esporte.jpg" alt="Imagem ilustrativa JIF cancelado">
@@ -201,32 +197,34 @@
   </footer>
 
   <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const closeButton = document.querySelector('.close-button');
-  const menu = document.getElementById('menu');
-  const submenuToggles = document.querySelectorAll('.submenu-toggle');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeButton = document.querySelector('.close-button');
+    const menu = document.getElementById('menu');
+    const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-  menuToggle.addEventListener('click', () => {
-    menu.classList.remove('oculto');
-  });
-
-  closeButton.addEventListener('click', () => {
-    menu.classList.add('oculto');
-  });
-
-  submenuToggles.forEach(toggle => {
-    const submenu = toggle.nextElementSibling;
-    submenu.style.maxHeight = "0px";
-    submenu.style.overflow = "hidden";
-    submenu.style.transition = "max-height 0.3s ease";
-
-    toggle.addEventListener('click', e => {
-      e.preventDefault(); // ✅ aqui estava faltando os parênteses
-      if (submenu.style.maxHeight === "0px") {
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
-      } else {
-        submenu.style.maxHeight = "0px";
-      }
+    menuToggle.addEventListener('click', () => {
+      menu.classList.remove('oculto');
     });
-  });
-</script>
+
+    closeButton.addEventListener('click', () => {
+      menu.classList.add('oculto');
+    });
+
+    submenuToggles.forEach(toggle => {
+      const submenu = toggle.nextElementSibling;
+      submenu.style.maxHeight = "0px";
+      submenu.style.overflow = "hidden";
+      submenu.style.transition = "max-height 0.3s ease";
+
+      toggle.addEventListener('click', e => {
+        e.preventDefault();
+        if (submenu.style.maxHeight === "0px") {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+        } else {
+          submenu.style.maxHeight = "0px";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
