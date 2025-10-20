@@ -38,6 +38,7 @@
       color: white;
       font-size: 3em;
       cursor: pointer;
+      z-index: 3000;
     }
     .menu {
       position: fixed;
@@ -48,7 +49,7 @@
       background-color: #2e7d32;
       padding: 100px 20px 20px;
       box-shadow: 2px 0 10px rgba(0,0,0,0.2);
-      z-index: 1000;
+      z-index: 2000;
       transform: translateX(-100%);
       transition: transform 0.3s ease;
     }
@@ -96,12 +97,17 @@
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
       padding: 50px 20px;
     }
-    .noticia-container {
+    .container-central {
       max-width: 1000px;
       width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .noticia-container {
       font-size: 1.4em;
       line-height: 1.6;
     }
@@ -113,6 +119,7 @@
     }
     .noticia-texto {
       grid-column: 1;
+      text-align: justify;
     }
     .noticia-imagem {
       grid-column: 2;
@@ -140,12 +147,11 @@
     <button class="menu-toggle">☰</button>
     <h1>Bem-vindo ao jornal 🧿LHE!</h1>
   </header>
+
   <nav class="menu oculto" id="menu">
     <button class="close-button">✖</button>
     <ul>
-      <ul>
       <li><a href="index.html" class="destaque">Destaque</a></li>
-    </ul>
       <li>
         <a href="#" class="submenu-toggle">Entrevistas ▾</a>
         <ul class="submenu">
@@ -162,14 +168,16 @@
       </li>
       <li><a href="educacao.html">Educação</a></li>
       <li><a href="dicas.html">Dicas da Semana</a></li>
+    </ul>
   </nav>
+
   <main>
     <div class="container-central">
       <section class="noticia">
         <div class="noticia-container">
           <div class="noticia-conteudo">
             <div class="noticia-texto">
-              <h2>🚨 JIF 2025 Cancelado: Reitoria explica decisão e propõe novo caminho</h2>
+              <h2>🌟 Destaque da Semana: JIF 2025 Cancelado</h2>
               <p>A Reitoria do IFSP anunciou que não vai acontecer a etapa estadual dos Jogos dos Institutos Federais (JIF) em 2025. A decisão foi tomada após uma consulta com os professores de Educação Física de todos os campi do IF, que apontaram vários problemas que tornaram inviável a realização do evento neste ano.</p>
               <p>Entre os principais motivos estão a falta de orçamento suficiente (o valor disponível era de R$ 350 mil, considerado muito baixo para cobrir os custos de participação de todos os campi), problemas de estrutura e o fato de o JIF não estar no calendário oficial do IFSP, o que dificultou o planejamento.</p>
               <p>Apesar disso, o IF não está deixando o esporte de lado. Foi criado um Grupo de Trabalho com professores, diretores e representantes da Reitoria para repensar como os jogos podem ser organizados de forma mais justa e estruturada. Em 2025, o foco vai ser preparar melhor a base para que os jogos voltem com força total em 2026.</p>
@@ -186,32 +194,21 @@
       </section>
     </div>
   </main>
+
   <footer>
     <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Alunos do IF</p>
     <p>Contato: <a href="mailto:olheadmifsp@gmail.com">olheadmifsp@gmail.com</a></p>
   </footer>
+
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const closeButton = document.querySelector('.close-button');
     const menu = document.getElementById('menu');
     const submenuToggles = document.querySelectorAll('.submenu-toggle');
-    menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
-    closeButton.addEventListener('click', () => menu.classList.add('oculto'));
-    submenuToggles.forEach(toggle => {
-      const submenu = toggle.nextElementSibling;
-      submenu.style.maxHeight = "0px";
-      submenu.style.overflow = "hidden";
-      submenu.style.transition = "max-height 0.3s ease";
-      toggle.addEventListener('click', e => {
-        e.preventDefault();
-        if(submenu.style.maxHeight === "0px") {
-          submenu.style.maxHeight = submenu.scrollHeight + "px";
-        } else {
-          submenu.style.maxHeight = "0px";
-        }
-      });
-    });
-  </script>
-</body>
-</html>
 
+    menuToggle.addEventListener('click', () => {
+      menu.classList.remove('oculto');
+    });
+
+    closeButton.addEventListener('click', () => {
+      menu.classList.add('
