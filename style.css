@@ -21,6 +21,11 @@ header {
 header h1 {
   font-size: 3em;
   margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+h2 {
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .menu-toggle {
@@ -102,16 +107,25 @@ main {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 50px;
+  padding: 50px 20px;
   font-size: 1.3em;
   font-family: 'Roboto', sans-serif;
 }
 
+.container-central {
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 main img {
-  width: 50%;
+  width: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 footer {
