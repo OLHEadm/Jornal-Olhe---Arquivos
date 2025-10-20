@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jornal 🧿LHE</title>
+  <title>Jornal 🧿LHE — Charge</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -13,12 +13,10 @@
       margin: 0;
       font-family: 'Roboto', sans-serif;
     }
-
     body {
       display: flex;
       flex-direction: column;
     }
-
     main {
       flex: 1;
       display: flex;
@@ -26,7 +24,6 @@
       align-items: flex-start;
       padding-top: 50px;
     }
-
     .imagem-container {
       position: relative;
       display: flex;
@@ -35,26 +32,19 @@
       gap: 20px;
       flex-wrap: wrap;
     }
-
     .imagem-container img {
       width: 50%;
       height: auto;
       object-fit: contain;
     }
-
-    /* Corrige apenas a primeira imagem (charge.jpg) */
     .imagem-container img.corrigir-orientacao {
       transform: rotate(90deg);
     }
-
-    /* A segunda imagem continua normal */
     .imagem-container img.extra-img {
       transform: rotate(0deg);
     }
-
     .titulo-arte {
       position: absolute;
-      top: 20px;
       left: 50%;
       transform: translateX(-50%);
       color: #000;
@@ -62,6 +52,12 @@
       text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
       text-align: center;
       pointer-events: none;
+    }
+    .titulo-arte.primeiro {
+      top: 20px;
+    }
+    .titulo-arte.segundo {
+      top: 70px;
     }
   </style>
 </head>
@@ -96,10 +92,9 @@
 
   <main>
     <div class="imagem-container">
-      <h2 class="titulo-arte">"Mulheres na Ciência"</h2>
-      <!-- Primeira imagem com correção -->
+      <h2 class="titulo-arte primeiro">"Mulheres na Ciência"</h2>
       <img src="charge.jpg" alt="Charge 1" class="corrigir-orientacao">
-      <!-- Segunda imagem permanece normal -->
+      <h2 class="titulo-arte segundo">"Autoestima"</h2>
       <img src="charge2.jpg" alt="Charge 2" class="extra-img">
     </div>
   </main>
@@ -123,7 +118,6 @@
       submenu.style.maxHeight = "0px";
       submenu.style.overflow = "hidden";
       submenu.style.transition = "max-height 0.3s ease";
-
       toggle.addEventListener('click', e => {
         e.preventDefault();
         if (submenu.style.maxHeight === "0px") {
