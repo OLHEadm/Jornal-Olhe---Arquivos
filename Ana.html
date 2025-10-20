@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jornal 🧿LHE</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 body {
@@ -14,139 +13,156 @@ body {
   padding: 0;
   background-color: white;
   color: #333;
-}
-header {
-  background-color: #1b5e20;
-  color: white;
-  padding: 20px;
   text-align: center;
 }
-header h1 {
-  margin: 0;
-  font-size: 2.5em;
+
+header, footer {
+  text-align: center;
 }
-nav {
-  background-color: #333;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+.noticia-container {
   display: flex;
   justify-content: center;
 }
-nav ul li {
-  position: relative;
+
+.noticia-conteudo {
+  max-width: 800px;
+  width: 100%;
 }
-nav ul li a {
-  display: block;
-  padding: 15px 20px;
-  color: white;
-  text-decoration: none;
-}
-nav ul li a:hover {
-  background-color: #1b5e20;
-}
-.submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #333;
-  display: none;
-  flex-direction: column;
-}
-.submenu li a {
-  padding: 10px 20px;
-}
-nav ul li:hover .submenu {
-  display: flex;
-}
-main {
-  padding: 40px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-.noticia-texto h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-.noticia-texto p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  text-align: justify;
-}
-.artes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-.arte {
+
+.noticia-texto {
   text-align: center;
 }
-.arte img {
+
+main {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
   width: 100%;
+}
+
+main > p {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.arte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.arte img {
+  width: 220px;
+  height: auto;
   border-radius: 10px;
   border: 3px solid #1b5e20;
+  cursor: pointer;
   transition: transform 0.2s;
 }
+
 .arte img:hover {
   transform: scale(1.05);
 }
+
 .arte p {
   margin-top: 10px;
-  font-size: 1.1em;
+  font-size: 2em;
+  text-align: center;
 }
+
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
   background-color: #1b5e20;
   color: white;
-  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .arte { width: 45%; }
+  .arte img { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.8em; }
+  .menu-toggle { font-size: 2.5em; }
+  .arte { width: 100%; }
+  .arte img { width: 100%; }
 }
 </style>
 </head>
 <body>
 <header>
-  <h1>Entrevista com a Artista Ana Caroline</h1>
+  <button class="menu-toggle">☰</button>
+  <h1>ENTREVISTA COM A ARTISTA ANA CAROLINA</h1>
 </header>
-<nav>
-  <ul>
-    <li><a href="index.html">Destaque</a></li>
-    <li>
-      <a href="#">Entrevistas ▾</a>
-      <ul class="submenu">
-        <li><a href="Rildo.html">Professor Rildo</a></li>
-        <li><a href="Esportes.html">Cauê Hirai</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#">Arte ▾</a>
-      <ul class="submenu">
-        <li><a href="charge.html">Charge</a></li>
-        <li><a href="Ana.html">Ana Caroline</a></li>
-      </ul>
-    </li>
-    <li><a href="educacao.html">Educação</a></li>
-    <li><a href="dicas.html">Dicas da Semana</a></li>
-  </ul>
-</nav>
+  <nav class="menu oculto" id="menu">
+    <button class="close-button">✖</button>
+    <ul>
+      <ul>
+      <li><a href="index.html" class="destaque">Destaque</a></li>
+    </ul>
+
+      <li>
+        <a href="#" class="submenu-toggle">Entrevistas ▾</a>
+        <ul class="submenu">
+          <li><a href="Rildo.html">Professor Rildo</a></li>
+          <li><a href="Esportes.html">Cauê Hirai</a></li>
+        </ul>
+      </li>
+      
+            <li>
+        <a href="#" class="submenu-toggle">Arte ▾</a>
+        <ul class="submenu">
+          <li><a href="charge.html">Charge</a></li>
+          <li><a href="Ana.html">Ana Caroline</a></li>
+        </ul>
+      </li>
+
+      <li><a href="educacao.html">Educação</a></li>
+
+      <li><a href="dicas.html">Dicas da Semana</a></li>
+
+  </nav>
+
 <main>
-  <section class="noticia">
-    <div class="noticia-texto">
-      <h2>🎨 Ana Caroline: A Arte como Expressão e Inspiração</h2>
-      <p><strong>• Como e quando você começou a fazer arte?</strong></p>
-      <p>Eu comecei a desenhar quando tinha 5 anos, mas realmente me empenhei no desenvolvimento do traço com 12 anos. Logo, me apaixonei pela arte e pelas suas várias formas de expressão.</p>
-      <p><strong>• Tem algum artista que você se inspirou?</strong></p>
-      <p>Sempre me inspirei em desenhos surrealistas, chamativos, mas fui moldando meu estilo para caber em diferentes tipos de desenhos, como realistas, o próprio “2D” entre outros. Mas os artistas que mais me apaixonei durante minha trajetória foram Salvador Dali, Louis Wain e Van Gogh.</p>
-      <p><strong>• Quais técnicas você utiliza na pintura?</strong></p>
-      <p>Eu uso uma variação de lápis, tintas acrílicas, aquarela, tinta a óleo, canetinhas, canetas esferográficas e carvão.</p>
-      <p><strong>• Como você se sente quando pinta?</strong></p>
-      <p>Eu me sinto livre de tudo aquilo que me prende na “carne”, algo mais expressivo, uma forma de deixar o que se sente, uma parte de você, o que se quer falar ou até mesmo uma história. É sobre muito mais aquilo que te faz sentir, não pensar no próximo passo.</p>
-    </div>
-  </section>
-  <hr>
+  <div class="container-central">
+    <section class="noticia">
+      <div class="noticia-container">
+        <div class="noticia-conteudo">
+          <div class="noticia-texto">
+            <h2>🎨 Ana Caroline: A Arte como Expressão e Inspiração</h2>
+            <p><strong>• Como e quando você começou a fazer arte?</strong></p>
+            <p>Eu comecei a desenhar quando tinha 5 anos, mas realmente me empenhei no desenvolvimento do traço com 12 anos. Logo, me apaixonei pela arte e pelas suas várias formas de expressão.</p>
+            <p><strong>• Tem algum artista que você se inspirou?</strong></p>
+            <p>Sempre me inspirei em desenhos surrealistas, chamativos, mas fui moldando meu estilo para caber em diferentes tipos de desenhos, como realistas, o próprio “2D” entre outros. Mas os artistas que mais me apaixonei durante minha trajetória foram Salvador Dali, Louis Wain e Van Gogh.</p>
+            <p><strong>• Quais técnicas você utiliza na pintura?</strong></p>
+            <p>Eu uso uma variação de lápis, tintas acrílicas, aquarela, tinta a óleo, canetinhas, canetas esferográficas e carvão.</p>
+            <p><strong>• Como você se sente quando pinta?</strong></p>
+            <p>Eu me sinto livre de tudo aquilo que me prende na “carne”, algo mais expressivo, uma forma de deixar o que se sente, uma parte de você, o que se quer falar ou até mesmo uma história. É sobre muito mais aquilo que te faz sentir, não pensar no próximo passo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+    <hr>
+
   <p>Confira abaixo as pinturas selecionadas pela Ana Caroline:</p>
+    <main>
   <div class="artes">
     <div class="arte"><img src="1.jpg" alt="Arte 1"><p>Arte 1</p></div>
     <div class="arte"><img src="2.jpg" alt="Arte 2"><p>Arte 2</p></div>
@@ -165,11 +181,35 @@ footer {
     <div class="arte"><img src="15.jpg" alt="Arte 15"><p>Arte 15</p></div>
     <div class="arte"><img src="16.jpg" alt="Arte 16"><p>Arte 16</p></div>
   </div>
-</main>
+    </main>
 <footer>
   <p>© 2025 Jornal 🧿LHE — Todos os direitos reservados. Desenvolvido por Alunos do IF.</p>
   <p>Contato: <a href="mailto:olheadmifsp@gmail.com">olheadmifsp@gmail.com</a></p>
 </footer>
-</body>
-</html>
 
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
+
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "hidden";
+  submenu.style.transition = "max-height 0.3s ease";
+
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if(submenu.style.maxHeight === "0px") {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    } else {
+      submenu.style.maxHeight = "0px";
+    }
+  });
+});
+</script>
+</
