@@ -124,8 +124,11 @@
     }
     .noticia-imagem {
       grid-column: 2;
-      display: grid;
-      gap: 60px; /* mais espaço entre as imagens */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      row-gap: 80px;
     }
     .noticia-imagem img {
       width: 100%;
@@ -233,3 +236,4 @@
   </script>
 </body>
 </html>
+
