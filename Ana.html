@@ -8,7 +8,100 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+  text-align: center;
+}
 
+header, footer {
+  text-align: center;
+}
+
+.noticia-container {
+  display: flex;
+  justify-content: center;
+}
+
+.noticia-conteudo {
+  max-width: 800px;
+  width: 100%;
+}
+
+.noticia-texto {
+  text-align: left;
+}
+
+main {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+main > p {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.arte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+}
+
+.arte img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #1b5e20;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.arte img:hover {
+  transform: scale(1.05);
+}
+
+.arte p {
+  margin-top: 10px;
+  font-size: 2em;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #1b5e20;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .arte { width: 45%; }
+  .arte img { width: 100%; }
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 1.8em; }
+  .menu-toggle { font-size: 2.5em; }
+  .arte { width: 100%; }
+  .arte img { width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -51,14 +144,10 @@
           <div class="noticia-texto">
             <h2>🎨 Ana Caroline: A Arte como Expressão e Inspiração</h2>
             <p>A arte sempre esteve presente na vida de Ana Caroline, que começou a desenhar ainda aos cinco anos de idade. No entanto, foi apenas aos doze que passou a se dedicar de forma mais intensa ao desenvolvimento de seu traço artístico. Desde então, apaixonou-se completamente pela arte e por suas diversas formas de expressão.</p>
-
             <p>Inspirada por estilos e artistas que marcaram época, Ana Caroline sempre se encantou com desenhos surrealistas e chamativos, mas, ao longo do tempo, foi moldando seu próprio estilo para se adaptar a diferentes tipos de obras, desde o realismo até o tradicional 2D. Entre os artistas que mais a inspiram estão Salvador Dalí, Louis Wain e Van Gogh — nomes que, segundo ela, representam bem a liberdade criativa e emocional que busca em suas produções.</p>
-
             <p>Na hora de criar, Ana Caroline utiliza uma grande variedade de técnicas e materiais: lápis, tintas acrílicas, aquarela, tinta a óleo, canetinhas, canetas esferográficas e carvão. Essa mistura de ferramentas permite que explore diferentes texturas e sensações, tornando cada obra única.</p>
-
             <p>Quando está pintando, a artista diz sentir-se completamente livre, como se se desprendesse de tudo o que a “prende na carne”. Para ela, a arte é uma forma de expressão profunda, um meio de transmitir sentimentos, histórias e pensamentos que muitas vezes não cabem em palavras. “É sobre aquilo que te faz sentir, não sobre pensar no próximo passo”, define a autora.</p>
-
-            <p>Assim, Ana Caroline segue transformando suas emoções em arte, mostrando que desenhar vai muito além de um simples hobby: é uma maneira de existir e se comunicar com o mundo de forma sincera e intensa.</p>
+            <p>Assim, Ana Caroline continua transformando suas emoções em arte, mostrando que desenhar vai muito além de um simples hobby: é uma maneira de existir e se comunicar com o mundo de forma sincera e intensa.</p>
           </div>
         </div>
       </div>
@@ -66,10 +155,8 @@
   </div>
 </main>
 
-<hr>
-
-<p style="font-size: 24px;">Confira abaixo as pinturas selecionadas pela Ana Caroline:</p>
 <main>
+  <p style="font-size: 24px; text-align: center;">Confira abaixo as pinturas selecionadas pela Ana Caroline:</p>
   <div class="artes">
     <div class="arte"><img src="1.jpg" alt="Arte 1"><p>Arte 1</p></div>
     <div class="arte"><img src="2.jpg" alt="Arte 2"><p>Arte 2</p></div>
@@ -96,9 +183,15 @@
 </footer>
 
 <script>
+const menuToggle = document.querySelector('.menu-toggle');
+const closeButton = document.querySelector('.close-button');
+const menu = document.getElementById('menu');
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-</script>
-</body>
-</html>
+menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
+closeButton.addEventListener('click', () => menu.classList.add('oculto'));
 
-
+submenuToggles.forEach(toggle => {
+  const submenu = toggle.nextElementSibling;
+  submenu.style.maxHeight = "0px";
+  submenu.style.overflow = "
