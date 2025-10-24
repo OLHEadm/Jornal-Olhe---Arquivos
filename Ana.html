@@ -188,10 +188,23 @@ const closeButton = document.querySelector('.close-button');
 const menu = document.getElementById('menu');
 const submenuToggles = document.querySelectorAll('.submenu-toggle');
 
-menuToggle.addEventListener('click', () => menu.classList.remove('oculto'));
-closeButton.addEventListener('click', () => menu.classList.add('oculto'));
+menuToggle.addEventListener('click', () => {
+  menu.classList.remove('oculto');
+});
+
+closeButton.addEventListener('click', () => {
+  menu.classList.add('oculto');
+});
 
 submenuToggles.forEach(toggle => {
   const submenu = toggle.nextElementSibling;
-  submenu.style.maxHeight = "0px";
-  submenu.style.overflow = "
+  toggle.addEventListener('click', e => {
+    e.preventDefault();
+    if (submenu.style.maxHeight && submenu.style.maxHeight !== "0px") {
+      submenu.style.maxHeight = "0px";
+    } else {
+      submenu.style.maxHeight = submenu.scrollHeight + "px";
+    }
+  });
+});
+</script>
